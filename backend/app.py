@@ -1,15 +1,15 @@
 """
 app.py
 
-Flask API + static frontend server for the Space Debris Tracker.
+flask API + static frontend server for the space debris tracker.
 
-Endpoints:
+endpoints:
     GET  /                  -> dashboard (frontend/index.html)
     GET  /api/debris        -> sample debris objects with recent trajectories
     POST /api/predict       -> {"sequence": [[x,y,z], ...]} -> predicted next position
     GET  /api/risk          -> naive pairwise close-approach check across sample debris
 
-Run with:
+run with:
     python backend/app.py
 """
 
@@ -48,7 +48,6 @@ else:
     print("No trained checkpoint found. Run `python backend/train.py` first. "
           "Endpoints that need the model will return an error until then.")
 
-# --- Sample data for the dashboard -------------------------------------------
 _sample_dataset = generate_synthetic_debris_set(num_objects=8, num_steps=60)
 
 
@@ -68,7 +67,6 @@ def _predict_next(sequence):
     return pred.tolist()
 
 
-# --- Routes -------------------------------------------------------------------
 
 @app.route("/")
 def index():
@@ -117,8 +115,7 @@ def api_risk():
     For each object, predicts its next position, then flags any pair of
     predicted positions closer than CLOSE_APPROACH_THRESHOLD_KM.
 
-    This is a placeholder heuristic, not a real probability-of-collision
-    calculation -- see README for suggested improvements.
+    This is a placeholder heuristic.
     """
     if _model is None:
         return jsonify({"error": "Model not loaded. Run backend/train.py first."}), 503

@@ -3,11 +3,6 @@ data_utils.py
 
 Synthetic orbital trajectory generation + windowing helpers for LSTM training.
 
-This is a stand-in for real orbital data. Replace `generate_synthetic_debris_set`
-with a loader that pulls real TLEs (e.g. via the `sgp4` or `skyfield` packages)
-and propagates them into (x, y, z) position vectors over time, keeping the same
-output shape so the rest of the pipeline (windowing, model, training) doesn't
-need to change.
 """
 
 import numpy as np
