@@ -51,8 +51,10 @@ function selectObject(id) {
           {
             label: id,
             data: points,
-            borderColor: "#4da3ff",
-            backgroundColor: "rgba(77,163,255,0.15)",
+            borderColor: "#c9a24a",
+            backgroundColor: "rgba(201,162,74,0.12)",
+            pointBackgroundColor: "#efe6cc",
+            pointBorderColor: "#c9a24a",
             fill: true,
             tension: 0.3,
             pointRadius: 3,
@@ -61,11 +63,21 @@ function selectObject(id) {
       },
       options: {
         scales: {
-          x: { title: { display: true, text: "X (km)" }, ticks: { color: "#8b93a7" } },
-          y: { title: { display: true, text: "Y (km)" }, ticks: { color: "#8b93a7" } },
+          x: {
+            title: { display: true, text: "X (km)", color: "#efe6cc", font: { family: "Space Mono", size: 10 } },
+            ticks: { color: "#a89572", font: { family: "Space Mono", size: 9 } },
+            grid: { color: "rgba(168,149,114,0.15)" },
+          },
+          y: {
+            title: { display: true, text: "Y (km)", color: "#efe6cc", font: { family: "Space Mono", size: 10 } },
+            ticks: { color: "#a89572", font: { family: "Space Mono", size: 9 } },
+            grid: { color: "rgba(168,149,114,0.15)" },
+          },
         },
         plugins: {
-          legend: { labels: { color: "#e6e9f2" } },
+          legend: {
+            labels: { color: "#efe6cc", font: { family: "Space Mono", size: 11 } },
+          },
         },
       },
     });
@@ -73,12 +85,12 @@ function selectObject(id) {
 }
 
 async function runRiskCheck() {
-  riskOutputEl.textContent = "Running screening...";
+  riskOutputEl.textContent = "Running screening…";
   const res = await fetch("/api/risk");
   const data = await res.json();
 
   if (data.error) {
-    riskOutputEl.textContent = `Error: ${data.error}`;
+    riskOutputEl.textContent = `ERROR — ${data.error}`;
     return;
   }
 
@@ -91,7 +103,7 @@ async function runRiskCheck() {
   riskOutputEl.innerHTML = data.close_approaches
     .map(
       (f) =>
-        `<div class="risk-flag">⚠ ${f.object_a} ↔ ${f.object_b}: ${f.predicted_distance_km} km</div>`
+        `<div class="risk-flag">✦ ${f.object_a} ↔ ${f.object_b} — ${f.predicted_distance_km} km</div>`
     )
     .join("");
 }
