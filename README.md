@@ -1,4 +1,4 @@
-# Space Debris Tracker
+# Space Debris Tracker (IN DEVELOPMENT)
 
 An LSTM-based web app for tracking space debris trajectories and flagging potential
 close approaches ("conjunctions") with active satellites.
@@ -22,6 +22,10 @@ python backend/app.py
 ```
 
 Then open http://localhost:5000 in your browser.
+
+## PREVIEW
+<img width="963" height="960" alt="sdt" src="https://github.com/user-attachments/assets/fc6d2749-38e2-4eb6-ba8d-2e8740920512" />
+
 
 ## Project structure
 
