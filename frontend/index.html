@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Debris Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🛰️ Space Debris Tracker</h1>
+    <p class="subtitle">LSTM-based trajectory prediction &amp; close-approach screening (starter demo)</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Tracked Objects</h2>
+      <div id="object-list" class="object-list">Loading...</div>
+    </section>
+
+    <section class="panel">
+      <h2>Trajectory (X vs Y)</h2>
+      <canvas id="trajectoryChart" height="120"></canvas>
+    </section>
+
+    <section class="panel">
+      <h2>Close Approach Screening</h2>
+      <button id="risk-btn">Run risk check</button>
+      <div id="risk-output" class="risk-output"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Starter scaffold &mdash; model trained on synthetic orbits. Not for real conjunction analysis.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

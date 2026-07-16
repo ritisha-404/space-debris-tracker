@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.egg-info/
+
+# Model checkpoints (regenerate via train.py)
+models/*.pt
+models/*.pth
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Env files
+.env
