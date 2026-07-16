@@ -78,21 +78,14 @@ body {
 .sub-block { text-align: left; flex: 1; min-width: 220px; }
 .sub-block-right { text-align: right; }
 
-.sub-jp {
-  margin: 0 0 4px;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--ink);
-}
-
 .sub-en {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   color: var(--navy);
   border-top: 1px solid var(--rule);
-  padding-top: 5px;
+  padding-top: 6px;
   display: inline-block;
 }
 
@@ -259,13 +252,6 @@ footer {
   height: 1px;
   background: var(--rule);
   margin-bottom: 20px;
-}
-
-.footer-quote {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  margin: 0 0 4px;
-  color: var(--ink);
 }
 
 .footer-quote-en {
