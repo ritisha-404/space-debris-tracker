@@ -3,11 +3,6 @@
 An LSTM-based web app for tracking space debris trajectories and flagging potential
 close approaches ("conjunctions") with active satellites.
 
-This repo is a **starter scaffold**, not a finished product. It gives you a working
-end-to-end skeleton — synthetic data, a trainable LSTM, a Flask API, and a simple
-dashboard frontend — so you can swap in real orbital data (e.g. TLEs from Space-Track
-or CelesTrak) and iterate.
-
 
 ## Quickstart
 
